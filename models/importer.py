@@ -11,3 +11,7 @@ class Importer(models.TransientModel):
 
     def output_ods():
         pass
+
+    def columns_type():
+        # TODO: create inheritable function to store typedata per columns
+        return False
