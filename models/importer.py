@@ -4,6 +4,11 @@ class Importer(models.TransientModel):
     _name = 'paimon.importer'
 
     def output_xls():
+    file = fields.Binary(required=True)
+
+    def _create_import_entry(self):
+        pass
+
         pass
 
     def output_csv():
