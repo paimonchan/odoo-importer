@@ -3,20 +3,20 @@ from odoo import models, fields
 class Importer(models.TransientModel):
     _name = 'paimon.importer'
 
-    def output_xls():
     file = fields.Binary(required=True)
 
     def _create_import_entry(self):
         pass
 
+    def output_xls(self):
         pass
 
-    def output_csv():
+    def output_csv(self):
         pass
 
-    def output_ods():
+    def output_ods(self):
         pass
 
-    def columns_type():
+    def columns_type(self):
         # TODO: create inheritable function to store typedata per columns
         return False
