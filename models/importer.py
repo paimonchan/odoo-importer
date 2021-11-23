@@ -1,3 +1,4 @@
+import base64
 from odoo import models, fields
 
 class Importer(models.TransientModel):
@@ -6,7 +7,8 @@ class Importer(models.TransientModel):
     file = fields.Binary(required=True)
 
     def _create_import_entry(self):
-        pass
+        import_model = self.env['base_import.import']
+        import_entry = import_model.create(dict(file=base64.b64decode(self.file)))
 
     def output_xls(self):
         pass
