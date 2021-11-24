@@ -9,12 +9,13 @@ class Importer(models.TransientModel):
     def _create_import_entry(self):
         import_model = self.env['base_import.import']
         import_entry = import_model.create(dict(file=base64.b64decode(self.file)))
+        return import_entry
     
     def _validate_columns_type(self, row):
         types = self.column_types()
         if not types:
             return
-        for index, type in types.items():
+        for columns, type in types.items():
             # TODO: add checking type data here
             pass
 
