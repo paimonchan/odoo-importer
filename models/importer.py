@@ -19,7 +19,12 @@ class Importer(models.TransientModel):
             # TODO: add checking type data here
             pass
 
-    def output_xls(self):
+    def import_xls(self):
+        import_entry = self._create_import_entry()
+        rows = import_entry._read_xls()
+        self.output_xls(rows)
+
+    def output_xls(self, rows):
         pass
 
     def output_csv(self):
