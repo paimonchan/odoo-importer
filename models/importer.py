@@ -24,6 +24,12 @@ class Importer(models.TransientModel):
         rows = import_entry._read_xls()
         self.output_xls(rows)
 
+    def import_csv(self):
+        import_entry = self._create_import_entry()
+        options = {}
+        rows = import_entry._read_csv(options)
+        self.output_csv(rows)
+
     def output_xls(self, rows):
         pass
 
