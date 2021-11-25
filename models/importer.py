@@ -40,5 +40,17 @@ class Importer(models.TransientModel):
         pass
 
     def column_types(self):
-        # TODO: create inheritable function to store typedata per columns
+        """
+        example: {
+            0 : {
+                type    : Integer | String | Date,
+                require : True | False
+            },
+            1 : {
+                type    : Integer | String | Date,
+                require : True | False
+            }
+        }
+        NOTE: 0 and 1 is column number start from left to right.
+        """
         return False
