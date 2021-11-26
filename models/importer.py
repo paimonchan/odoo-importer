@@ -31,12 +31,15 @@ class Importer(models.TransientModel):
         self.output_csv(rows)
 
     def output_xls(self, rows):
+        # override function
         pass
 
-    def output_csv(self):
+    def output_csv(self, rows):
+        # override function
         pass
 
     def output_ods(self):
+        # override function
         pass
 
     def column_types(self):
