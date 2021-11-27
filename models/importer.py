@@ -11,7 +11,7 @@ class Importer(models.TransientModel):
         import_entry = import_model.create(dict(file=base64.b64decode(self.file)))
         return import_entry
     
-    def _validate_columns_type(self, row):
+    def _validate_columns_type(self, rows):
         types = self.column_types()
         if not types:
             return
