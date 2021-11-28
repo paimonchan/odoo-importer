@@ -32,6 +32,12 @@ class Importer(models.TransientModel):
         self._validate_columns_type(rows)
         self.output_csv(rows)
 
+    def import_ods(self):
+        import_entry = self._create_import_entry()
+        rows = import_entry.read_ods()
+        self._validate_columns_type(rows)
+        self.output_ods(rows)
+
     def output_xls(self, rows):
         # override function
         pass
@@ -40,7 +46,7 @@ class Importer(models.TransientModel):
         # override function
         pass
 
-    def output_ods(self):
+    def output_ods(self, rows):
         # override function
         pass
 
