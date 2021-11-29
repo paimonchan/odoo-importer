@@ -19,20 +19,20 @@ class Importer(models.TransientModel):
             # TODO: add checking type data here
             pass
 
-    def import_xls(self):
+    def button_xls(self):
         import_entry = self._create_import_entry()
         rows = import_entry._read_xls()
         self._validate_columns_type(rows)
         self.output_xls(rows)
 
-    def import_csv(self):
+    def button_csv(self):
         import_entry = self._create_import_entry()
         options = dict(quoting='|', separator=',')  
         rows = import_entry._read_csv(options)
         self._validate_columns_type(rows)
         self.output_csv(rows)
 
-    def import_ods(self):
+    def button_ods(self):
         import_entry = self._create_import_entry()
         rows = import_entry.read_ods()
         self._validate_columns_type(rows)
