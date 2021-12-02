@@ -14,6 +14,15 @@ class Example(models.TransientModel):
         -------------------------------------------------------------
         | product 02        | product 02 desc       | 2021-11-15    |
         ------------------------------------------------------------
+
+        :param rows:                list values rows in excel 
+
+        :Example:
+        rows = [
+            ('name', 'description', 'date),
+            ('product 01', 'product 01 desc', datetime(2021-11-31)),
+            ('product 02', 'product 02 desc', datetime(2021-11-15))
+        ]
         """
         
         for row in rows:
