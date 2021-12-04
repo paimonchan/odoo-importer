@@ -3,9 +3,12 @@
         <field name="name">Example</field>
         <field name="model">paimon.example</field>
         <field name="arch" type="xml">
-            <tree>
+            <form>
                 <field name="file"/>
-            </tree>
+                <footer>
+                    <button name="button_xls" type="object" string="Import" class="btn-default"/>
+                </footer>
+            </form>
         </field>
     </record>
 </odoo>
